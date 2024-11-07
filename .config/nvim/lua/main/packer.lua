@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- themes
-  use "rebelot/kanagawa.nvim"
   use({
 	  'rose-pine/neovim',
 	  as = 'rose-pine',
@@ -24,5 +23,11 @@ return require('packer').startup(function(use)
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use 'mbbill/undotree'
 
-    
+  -- lsp
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-path'
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 end)
