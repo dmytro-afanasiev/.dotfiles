@@ -31,6 +31,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "79"
 
 vim.g.netrw_list_hide = ".DS_Store,__pycache__/"

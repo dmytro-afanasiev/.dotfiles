@@ -83,6 +83,7 @@ vim.diagnostic.config({
     underline = true,
     float = {
         header = false,
-        border = 'rounded'
+        border = 'rounded',
+        source = "if_many"
     }
 })
