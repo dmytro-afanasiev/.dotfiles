@@ -25,6 +25,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set({ 'n', 'x' }, '<leader>f', '<cmd>lua vim.lsp.buf.format({async = false, timeout_ms = 10000})<cr>',
             opts)
         vim.keymap.set('n', '<leader>vca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+        vim.keymap.set('n', '<leader>oi', function()
+            vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+        end, opts)
     end,
 })
 
@@ -39,8 +42,18 @@ require("mason-lspconfig").setup({
         function(server_name)
             require('lspconfig')[server_name].setup({ handlers = handlers })
         end,
+        ["pyright"] = function()
+            require('lspconfig').pyright.setup({
+                settings = {
+                    pyright = {
+                        -- Using Ruff's import organizer
+                        disableOrganizeImports = true,
+                    },
+                },
+            })
+        end,
     },
-    ensure_installed = {"rust_analyzer@2024-10-21"}
+    ensure_installed = { "rust_analyzer@2024-10-21" }
 })
 
 local cmp = require('cmp')
@@ -84,6 +97,6 @@ vim.diagnostic.config({
     float = {
         header = false,
         border = 'rounded',
-        source = "if_many"
+        source = "always"
     }
 })
