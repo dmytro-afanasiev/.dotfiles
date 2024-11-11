@@ -50,6 +50,7 @@ require("mason-lspconfig").setup({
                         disableOrganizeImports = true,
                     },
                 },
+                handlers = handlers
             })
         end,
     },
