@@ -30,4 +30,10 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
+
+  -- docs
+  use {
+      'kkoomen/vim-doge',
+      run = ':call doge#install()'
+  }
 end)
