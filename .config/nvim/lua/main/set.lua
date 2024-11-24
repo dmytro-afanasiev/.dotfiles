@@ -33,4 +33,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "79"
 
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
 vim.g.netrw_list_hide = ".DS_Store,__pycache__/"
