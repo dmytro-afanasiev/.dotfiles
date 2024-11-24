@@ -35,6 +35,13 @@ local handlers = {
     ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' }),
     ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
 }
+local function shallowCopy(original)
+    local copy = {}
+    for key, value in pairs(original) do
+        copy[key] = value
+    end
+    return copy
+end
 
 require("mason").setup()
 require("mason-lspconfig").setup({
@@ -55,6 +62,23 @@ require("mason-lspconfig").setup({
         end,
     },
     ensure_installed = { "rust_analyzer@2024-10-21" }
+})
+require("mason-nvim-dap").setup({
+    handlers = {
+        function(config)
+            require('mason-nvim-dap').default_setup(config)
+        end,
+        codelldb = function(config)
+            local copy = shallowCopy(config.configurations[1])
+            copy.name = 'LLDB: Launc with args'
+            copy.args = function()
+                local args_string = vim.fn.input("Input arguments: ")
+                return vim.split(args_string, " ")
+            end
+            table.insert(config.configurations, 1, copy)
+            require('mason-nvim-dap').default_setup(config)
+        end,
+    }
 })
 
 local cmp = require('cmp')
@@ -87,10 +111,10 @@ cmp.setup({
 vim.diagnostic.config({
     signs = {
         text = {
-            [vim.diagnostic.severity.ERROR] = 'E',
-            [vim.diagnostic.severity.WARN] = 'W',
-            [vim.diagnostic.severity.HINT] = 'H',
-            [vim.diagnostic.severity.INFO] = 'I',
+            [vim.diagnostic.severity.ERROR] = '󰅙',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.HINT] = '󰌵',
+            [vim.diagnostic.severity.INFO] = '󰋼',
         },
     },
     virtual_text = false,

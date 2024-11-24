@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
     })
+    use 'nvim-tree/nvim-web-devicons'
 
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -32,6 +33,11 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
+
+    -- debug
+    use 'mfussenegger/nvim-dap'
+    use 'jay-babu/mason-nvim-dap.nvim'
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
 
     -- docs
     use {
