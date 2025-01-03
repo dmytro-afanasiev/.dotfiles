@@ -1,0 +1,7 @@
+/** Basic config file **/
+
+configuration {
+  modi: "drun,run,window,ssh";
+  show-icons:         true;
+  icon-theme:         "Papirus";
+}
