@@ -1,12 +1,8 @@
 [user]
 	name = Dmytro
 	email = example@gmail.com
-	signingkey = 2D4B5EAF1C184D9A
-[alias]
-	l = log --all --graph --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --date iso
 [core]
 	editor = nvim
-[commit]
-	gpgsign = true
-[gpg]
-	program = gpg
+	excludesFile = ~/.gitignore
+[alias]
+	l = log --all --graph --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
