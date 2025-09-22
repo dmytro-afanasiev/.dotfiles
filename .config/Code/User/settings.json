@@ -1,0 +1,23 @@
+{
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "telemetry.editStats.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "editor.lineNumbers": "relative",
+    "workbench.colorTheme": "Bearded Theme Anthracite",
+    "editor.fontSize": 13,
+    "workbench.iconTheme": "bearded-icons",
+    "remote.SSH.defaultExtensions": [
+        "ms-python.python"
+    ],
+    "workbench.startupEditor": "none",
+    "workbench.enableExperiments": false,
+    "update.showReleaseNotes": false,
+    "workbench.tips.enabled": false,
+    "editor.minimap.enabled": false,
+    "git.autofetch": false,
+    "search.exclude": {
+        "**/__pycache__/**": true,
+        "**/.venv/**": true
+    }
+}
