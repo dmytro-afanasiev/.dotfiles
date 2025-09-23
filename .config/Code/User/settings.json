@@ -14,10 +14,13 @@
     "workbench.enableExperiments": false,
     "update.showReleaseNotes": false,
     "workbench.tips.enabled": false,
-    "editor.minimap.enabled": false,
     "git.autofetch": false,
     "search.exclude": {
         "**/__pycache__/**": true,
         "**/.venv/**": true
-    }
+    },
+    "editor.minimap.enabled": false,
+    "files.exclude": {
+        "**/__pycache__": true
+    },
 }
