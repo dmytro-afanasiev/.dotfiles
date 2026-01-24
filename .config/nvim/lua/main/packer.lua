@@ -43,4 +43,6 @@ return require('packer').startup(function(use)
         'kkoomen/vim-doge',
         run = ':call doge#install()'
     }
+
+    use {"lewis6991/gitsigns.nvim", }
 end)
