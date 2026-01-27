@@ -1,3 +1,8 @@
+local M = {}
+
+M.height = 15
+
+
 local function first_terminal_buffer()
     for _, bufnr in ipairs(vim.api.nvim_list_bufs()) do
         if vim.bo[bufnr].buftype == 'terminal' then
@@ -14,18 +19,19 @@ local function is_buffer_shown(bufnr)
     end
     return false
 end
-vim.keymap.set("n", "<leader>t", function()
-    local h = 15
+
+function M.open_terminal()
     local bufnr = first_terminal_buffer()
     if not bufnr then
-        vim.cmd(h .. 'split')
+        vim.cmd(M.height .. 'split')
         vim.cmd('terminal')
         return
     end
     --- buffer found
     if not is_buffer_shown(bufnr) then
-        vim.cmd(h .. 'split #' .. bufnr)
+        vim.cmd(M.height .. 'split #' .. bufnr)
     end
-end)
 
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+end
+
+return M

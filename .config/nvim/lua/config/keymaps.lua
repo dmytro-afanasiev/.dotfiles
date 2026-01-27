@@ -37,5 +37,20 @@ vim.keymap.set({ "n", "t" }, "<leader>q", '<cmd>q<CR>')
 vim.keymap.set("n", "<leader>cp", function()
     local path = vim.fn.expand("%:~:.")
     vim.fn.setreg("+", path)
-    vim.notify("Copied path: " .. path)
+    vim.notify("Copied: " .. path)
 end, { desc = "Copy relative file path", silent = true })
+
+vim.keymap.set("n", "<leader>cP", function()
+    local path = vim.fn.expand("%:~:.")
+    local line = vim.api.nvim_win_get_cursor(0)[1]
+    local val = path .. ':' .. line
+    vim.fn.setreg("+", val)
+    vim.notify("Copied: " .. val)
+end, {desc = "Copy relative file path with line number", silent = true})
+
+
+vim.keymap.set("n", "<leader>t", function()
+    require("config.term").open_terminal()
+end)
+
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
