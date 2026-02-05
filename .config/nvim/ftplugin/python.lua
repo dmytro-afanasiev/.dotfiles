@@ -13,3 +13,5 @@ vim.keymap.set("n", "<leader>t", function()
         vim.api.nvim_feedkeys("i" .. "source " .. venv .. "\n", "n", false)
     end, 100)
 end, { buffer = true })
+
+vim.opt.colorcolumn = "140"

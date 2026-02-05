@@ -19,6 +19,7 @@ return {
             "yaml",
             "printf",
             "toml",
+            "ini",
         })
         vim.o.foldmethod = "expr"
         vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
