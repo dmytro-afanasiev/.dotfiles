@@ -1,0 +1,27 @@
+add_newline = false
+
+format = "$status> "
+right_format = "$directory $git_branch $python \\[$time\\]"
+
+[python]
+disabled = false
+format = "\\(${virtualenv}\\)"
+
+[time]
+disabled = false
+format = "[$time](bold blue)"
+
+[directory]
+disabled = false
+format = "$path"
+fish_style_pwd_dir_length = 1
+truncation_length = 2
+
+[status]
+disabled = false
+success_symbol = ''
+symbol = ''
+
+[git_branch]
+disabled = false
+format = "[$branch](bold fg:94)"
