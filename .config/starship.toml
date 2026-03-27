@@ -1,7 +1,7 @@
 add_newline = false
 
 format = "$status[>](bold green) "
-right_format = "$directory $git_branch $python \\[$time\\]"
+right_format = "$directory $python \\[$time\\]"
 
 [python]
 disabled = false
@@ -23,5 +23,5 @@ success_symbol = ''
 symbol = ''
 
 [git_branch]
-disabled = false
+disabled = true
 format = "[$branch](bold fg:94)"
