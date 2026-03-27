@@ -55,9 +55,16 @@ return {
                     override_file_sorter = true,
                     case_mode = "smart_case",
                 },
+            },
+            defaults = {
+                layout_config = {
+                    vertical = {
+                        preview_height = 0.70
+                    }
+                },
+                layout_strategy = "vertical"
             }
         })
         telescope.load_extension("fzf")
     end
-
 }

@@ -1,6 +1,6 @@
 add_newline = false
 
-format = "$status> "
+format = "$status[>](bold green) "
 right_format = "$directory $git_branch $python \\[$time\\]"
 
 [python]
