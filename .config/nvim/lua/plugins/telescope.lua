@@ -30,7 +30,8 @@ return {
         { "<leader>pw", function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end,        desc = "List all symbols" },
         { "<C-p>",      function() require("telescope.builtin").git_files() end,                            desc = "Git files" },
         { "<leader>pb", function() require("telescope.builtin").buffers() end,                              desc = "Buffers" },
-        { "<leader>pg", function() require("telescope.builtin").live_grep() end,                            desc = "Live grep" },
+        { "<leader>pg", function() require("telescope.builtin").live_grep({ additional_args = { "--smart-case" } }) end,                            desc = "Live grep" },
+        { "<leader>gp", function() require("telescope.builtin").live_grep({ additional_args = { "--fixed-strings", "--smart-case" } }) end,         desc = "Live grep no regex" },
         { "<leader>pc", function() require("telescope.builtin").colorscheme({ enable_preview = true }) end, desc = "Colorscheme" },
         { "<leader>pF", function()
             find_in_prompted_dir(require("telescope.builtin").find_files)
