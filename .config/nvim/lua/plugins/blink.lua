@@ -1,6 +1,7 @@
 return {
     'saghen/blink.cmp',
     event = { "BufReadPost", "BufNewFile" },
+    version = '1.*',
     lazy = true,
     opts = {
         keymap = { preset = 'enter' },
