@@ -10,8 +10,8 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
-vim.o.foldmethod = "indent"
-vim.o.foldlevel = 99
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
 
 vim.opt.wrap = false
 
@@ -30,10 +30,9 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
 vim.opt.colorcolumn = "79"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.g.netrw_list_hide = ".DS_Store,__pycache__/"
+vim.opt.winborder = 'rounded'
